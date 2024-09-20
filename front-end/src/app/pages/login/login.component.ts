@@ -16,13 +16,13 @@ export class LoginComponent {
   constructor(private authService: AuthService) {}
 
   login() {
-    // this.authService.login(this.username, this.password).subscribe(
-    //   response => {
-    //     localStorage.setItem('accessToken', response.accessToken);
-    //   },
-    //   error => {
-    //     console.error('Login failed', error);
-    //   }
-    // );
+    this.authService.login(this.username, this.password).subscribe(
+      response => {
+        localStorage.setItem('accessToken', response.accessToken);
+      },
+      error => {
+        console.error('Login failed', error);
+      }
+    );
   }
 }
