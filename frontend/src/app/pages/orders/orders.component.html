@@ -1,0 +1,19 @@
+<table>
+    <thead>
+        <tr>
+            <th>Customer Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of orders">
+            <td>{{ order.customerName }}</td>
+            <td>{{ order.status }}</td>
+            <td>
+                <button (click)="updateOrderStatus(order.id, 'In-Progress')">In-Progress</button>
+                <button (click)="updateOrderStatus(order.id, 'Completed')">Completed</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
